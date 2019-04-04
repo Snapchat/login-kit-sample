@@ -1,2 +1,3 @@
-# login-kit-sample
-Login Kit sample code for iOS and Android.
+# Login Kit Sample Apps
+
+ - [Sample iOS App](ios)

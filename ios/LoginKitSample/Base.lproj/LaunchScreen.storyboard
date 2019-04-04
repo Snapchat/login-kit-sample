@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uJK-E0-Cl0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="qpI-bL-INu">
+            <objects>
+                <viewController id="uJK-E0-Cl0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1cz-Xw-YJv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-login-kit" translatesAutoresizingMaskIntoConstraints="NO" id="cWi-8b-DDC">
+                                <rect key="frame" x="141" y="204" width="93" height="93"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="93" id="DUw-kV-0fd"/>
+                                    <constraint firstAttribute="width" constant="93" id="S3z-Zr-Oue"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login Kit Demo App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xh4-5p-Ti6">
+                                <rect key="frame" x="104" y="327" width="167" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="TAx-LS-jp9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ih-Qb-feJ">
+                                <rect key="frame" x="145.5" y="377" width="84" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="KAk-rX-RH9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKq-A0-dfZ">
+                                <rect key="frame" x="79.5" y="412" width="216" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="Dg2-mR-HIX"/>
+                                </constraints>
+                                <string key="text">Copyright © 2018-2019 Snap Inc.
+All rights reserved</string>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Xh4-5p-Ti6" firstAttribute="top" secondItem="cWi-8b-DDC" secondAttribute="bottom" constant="30" id="5Aa-Fa-fNQ"/>
+                            <constraint firstItem="7Ih-Qb-feJ" firstAttribute="centerX" secondItem="sOH-nf-RGY" secondAttribute="centerX" id="BpO-KI-qRB"/>
+                            <constraint firstItem="7Ih-Qb-feJ" firstAttribute="top" secondItem="Xh4-5p-Ti6" secondAttribute="bottom" constant="17" id="KTL-va-pDP"/>
+                            <constraint firstItem="NKq-A0-dfZ" firstAttribute="top" secondItem="7Ih-Qb-feJ" secondAttribute="bottom" constant="8" id="PqT-rK-vdk"/>
+                            <constraint firstItem="NKq-A0-dfZ" firstAttribute="centerX" secondItem="sOH-nf-RGY" secondAttribute="centerX" id="SWo-qp-aVe"/>
+                            <constraint firstItem="Xh4-5p-Ti6" firstAttribute="centerX" secondItem="sOH-nf-RGY" secondAttribute="centerX" id="hku-7w-nTc"/>
+                            <constraint firstItem="Xh4-5p-Ti6" firstAttribute="centerY" secondItem="sOH-nf-RGY" secondAttribute="centerY" id="lQP-Vz-NKq"/>
+                            <constraint firstItem="cWi-8b-DDC" firstAttribute="centerX" secondItem="sOH-nf-RGY" secondAttribute="centerX" id="ta6-7q-kIt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sOH-nf-RGY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HYP-AB-vYi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon-login-kit" width="200" height="200"/>
+    </resources>
+</document>
