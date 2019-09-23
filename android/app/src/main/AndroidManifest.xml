@@ -8,8 +8,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <meta-data android:name="com.snapchat.kit.sdk.clientId" android:value="77152c23-4e07-43f2-860f-1526957f74ac" />
-        <meta-data android:name="com.snapchat.kit.sdk.redirectUrl" android:value="loginkitdemo://snap/auth" />
+        <meta-data android:name="com.snapchat.kit.sdk.clientId" android:value="INSERT_YOUR_OAUTH_CLIENT_ID" />
+        <meta-data android:name="com.snapchat.kit.sdk.redirectUrl" android:value="INSERT_YOUR_OAUTH_REDIRECT_URL" />
         <meta-data android:name="com.snapchat.kit.sdk.scopes" android:resource="@array/snap_connect_scopes" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -26,9 +26,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
-                    android:scheme="loginkitdemo"
-                    android:host="snap"
-                    android:path="/auth"
+                    android:scheme="the scheme of your redirect url"
+                    android:host="the host of your redirect url"
+                    android:path="the path of your redirect url"
                     />
             </intent-filter>
         </activity>
