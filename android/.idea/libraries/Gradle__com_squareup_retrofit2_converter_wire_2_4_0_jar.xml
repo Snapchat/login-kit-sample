@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.squareup.retrofit2:converter-wire:2.4.0@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-wire/2.4.0/64248083c9558441acd2528f08885dc275a59d78/converter-wire-2.4.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-wire/2.4.0/e38ff3c6e6671174f650291a5f9351f3f0a078c5/converter-wire-2.4.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
