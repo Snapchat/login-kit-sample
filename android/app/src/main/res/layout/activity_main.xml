@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
-        android:fontFamily="monospace"
+        android:fontFamily="@font/avenirnextgeo_regular"
         android:text="@string/user_display_name"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,6 +27,7 @@
         android:layout_marginBottom="8dp"
         android:background="@color/colorSnap"
         android:contentDescription="@string/logout_button"
+        android:fontFamily="@font/avenirnextgeo_regular"
         android:text="@string/logout_button"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -42,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="12dp"
-        android:fontFamily="monospace"
+        android:fontFamily="@font/avenirnextgeo_regular"
         android:text="@string/user_external_id"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,6 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
+        android:fontFamily="@font/avenirnextgeo_regular"
         app:layout_constraintStart_toEndOf="@+id/labelDisplayNameView"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -63,6 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="12dp"
+        android:fontFamily="@font/avenirnextgeo_regular"
         app:layout_constraintStart_toEndOf="@+id/labelExternalIdView"
         app:layout_constraintTop_toBottomOf="@+id/displayNameView" />
 

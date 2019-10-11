@@ -50,7 +50,7 @@ You need to amend these entries within the ```<application>``` node
 
 If your app redirectUrl is `myapp://snap-kit/oauth2` then your `redirectUrl` attribute would look like this
 ```
-<meta-data android:name="com.snapchat.kit.sdk.redirectUrl" android:value="INSERT_YOUR_OAUTH_REDIRECT_URL" />
+<meta-data android:name="com.snapchat.kit.sdk.redirectUrl" android:value="myapp://snap-kit/oauth2" />
 ```
 
 You will also need to amend the scheme, host and path as per below:
