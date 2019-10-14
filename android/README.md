@@ -18,7 +18,7 @@ You also need to define a `redirectUrl` for your app, this is used within the An
 Steps 1 and 2 are already complete in this demo app and are just here for your understanding, step 3 needs to be carried out before you can run the application.
 
 1. You need to import the Login Kit and Core Kit from our Maven repository.
-Open up your apps [Project level build.gradle](/build.gradle) and add the following code block in the repositories section.
+Open up your apps [Project level build.gradle](/android/build.gradle) and add the following code block in the repositories section.
 
 ```
 repositories {
@@ -28,7 +28,7 @@ repositories {
 }
 ```
 
-2. Open up your [App level build.gradle](/app/build.gradle) and add the following code block in the dependencies section.
+2. Open up your [App level build.gradle](/android/app/build.gradle) and add the following code block in the dependencies section.
 
 ```
 dependencies {
