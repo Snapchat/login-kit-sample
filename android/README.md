@@ -8,7 +8,7 @@ You need to register your app at the [Snap Kit developer portal](https://kit.sna
 
 After registering your app you will receive two OAuth clientIDs, you will receive a *Production* `clientID` and a *Development* `clientID`.
 
-You can use the *Development* `clientID` anytime even before an app is reviewed and approved. But when using the *Development* `clientID` only accounts listed under the *Demo Users* in the app registration/profile page on [Snap Kit developer portal] will be able to use your application.
+You can use the *Development* `clientID` anytime even before an app is reviewed and approved. But when using the *Development* `clientID` only accounts listed under the *Demo Users* in the app registration/profile page on [Snap Kit developer portal] ([https://kit.snapchat.com/portal](https://kit.snapchat.com/portal)) will be able to use your application.
 
 With the *Production* `clientID`, your app can post the content from any Snapchat account. But your app must be approved for the *Production* `clientID` to work.
 
@@ -18,7 +18,7 @@ You also need to define a `redirectUrl` for your app, this is used within the An
 Steps 1 and 2 are already complete in this demo app and are just here for your understanding, step 3 needs to be carried out before you can run the application.
 
 1. You need to import the Login Kit and Core Kit from our Maven repository.
-Open up your apps build.gradle at Project level (/android/build.gradle) and add the following code block in the repositories section.
+Open up your apps [Project level build.gradle](/build.gradle) and add the following code block in the repositories section.
 
 ```
 repositories {
@@ -28,7 +28,7 @@ repositories {
 }
 ```
 
-2. Open up your applications build.gradle at App level (/android/app/build.gradle) and add the following code block in the dependencies section.
+2. Open up your [App level build.gradle](/app/build.gradle) and add the following code block in the dependencies section.
 
 ```
 dependencies {
