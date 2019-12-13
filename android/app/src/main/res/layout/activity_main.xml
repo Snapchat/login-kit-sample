@@ -8,14 +8,28 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/labelMyProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="216dp"
+        android:fontFamily="@font/avenirnextgeo_regular"
+        android:text="@string/user_profile_title"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="48sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/labelDisplayNameView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="116dp"
         android:fontFamily="@font/avenirnextgeo_regular"
         android:text="@string/user_display_name"
         android:textColor="@color/colorPrimaryDark"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,11 +55,12 @@
         android:id="@+id/labelExternalIdView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/avenirnextgeo_regular"
         android:text="@string/user_external_id"
         android:textColor="@color/colorPrimaryDark"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelDisplayNameView" />
 
@@ -53,8 +68,8 @@
         android:id="@+id/displayNameView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="116dp"
         android:fontFamily="@font/avenirnextgeo_regular"
         app:layout_constraintStart_toEndOf="@+id/labelDisplayNameView"
         app:layout_constraintTop_toTopOf="parent" />
@@ -63,8 +78,8 @@
         android:id="@+id/externalIDView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/avenirnextgeo_regular"
         app:layout_constraintStart_toEndOf="@+id/labelExternalIdView"
         app:layout_constraintTop_toBottomOf="@+id/displayNameView" />
@@ -73,9 +88,10 @@
         android:id="@+id/avatarImageView"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
         android:contentDescription="@string/user_avatar_holding_text"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelExternalIdView"
         app:srcCompat="@drawable/bitmoji450x450" />

@@ -28,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
     private ImageView mAvatarImageView;
     private Button mSignOutButton;
     private View mLowerLayout;
+    private TextView mLabelMyProfile;
+    private TextView mLabelDisplayName;
+    private TextView mLabelExternalId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
         mExternalIdView = findViewById(R.id.externalIDView);
         mAvatarImageView = findViewById(R.id.avatarImageView);
         mSignOutButton = findViewById(R.id.signOutButton);
+        mLabelMyProfile = findViewById(R.id.labelMyProfile);
+        mLabelDisplayName = findViewById(R.id.labelDisplayNameView);
+        mLabelExternalId  = findViewById(R.id.labelExternalIdView);
 
         // the sign out button will allow the user to unlink their profile from the app
         mSignOutButton.setOnClickListener(new View.OnClickListener(){
@@ -57,7 +63,13 @@ public class MainActivity extends AppCompatActivity {
                     public void onLoginSucceeded() {
                         Log.d("SnapkitLogin", "Login was successful");
                         mSignOutButton.setVisibility(View.VISIBLE);
+                        mDisplayName.setVisibility(View.VISIBLE);
+                        mExternalIdView.setVisibility(View.VISIBLE);
+                        mAvatarImageView.setVisibility(View.VISIBLE);
+                        mLabelMyProfile.setVisibility(View.INVISIBLE);
                         mLoginButton.setVisibility(View.INVISIBLE);
+                        mLabelDisplayName.setVisibility(View.VISIBLE);
+                        mLabelExternalId.setVisibility(View.VISIBLE);
                         getUserDetails();
                     }
 
@@ -124,8 +136,14 @@ public class MainActivity extends AppCompatActivity {
         mDisplayName.setText("");
         mExternalIdView.setText("");
         mAvatarImageView.setImageResource(R.drawable.bitmoji450x450);
+        mDisplayName.setVisibility(View.INVISIBLE);
+        mExternalIdView.setVisibility(View.INVISIBLE);
+        mAvatarImageView.setVisibility(View.INVISIBLE);
+        mLabelMyProfile.setVisibility(View.VISIBLE);
         mSignOutButton.setVisibility(View.INVISIBLE);
         mLoginButton.setVisibility(View.VISIBLE);
+        mLabelDisplayName.setVisibility(View.INVISIBLE);
+        mLabelExternalId.setVisibility(View.INVISIBLE);
     }
 
     private void signOutUser() {
