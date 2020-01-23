@@ -34,8 +34,8 @@ repositories {
 dependencies {
    ...
    implementation([
-           'com.snapchat.kit.sdk:login:1.1.4',
-           'com.snapchat.kit.sdk:core:1.1.4'
+           'com.snapchat.kit.sdk:login:1.4.0',
+           'com.snapchat.kit.sdk:core:1.4.0'
    ])
 }
 ```

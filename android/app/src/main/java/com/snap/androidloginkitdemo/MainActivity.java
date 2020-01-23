@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void signOutUser() {
         Log.d("SnapkitLogin", "The user is unlinking their profile");
-        SnapLogin.getAuthTokenManager(this).revokeToken();
+        SnapLogin.getAuthTokenManager(this).clearToken();
     }
 
 }
