@@ -28,15 +28,11 @@ repositories {
 }
 ```
 
-2. Open up your [App level build.gradle](/android/app/build.gradle) and add the following code block in the dependencies section.
+2. Open up your [App level build.gradle](`/android/app/build.gradle`) and update the `snapKitSdkVersion` as necessary`.
 
 ```
-dependencies {
-   ...
-   implementation([
-           'com.snapchat.kit.sdk:login:1.4.0',
-           'com.snapchat.kit.sdk:core:1.4.0'
-   ])
+ext {
+    snapKitSdkVersion = '1.4.0'
 }
 ```
 
