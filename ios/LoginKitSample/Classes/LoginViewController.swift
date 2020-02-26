@@ -58,14 +58,13 @@ extension LoginViewController {
                 let data = response["data"] as? [String: Any],
                 let me = data["me"] as? [String: Any],
                 let displayName = me["displayName"] as? String,
-                let bitmoji = me["bitmoji"] as? [String: Any],
-                let avatar = bitmoji["avatar"] as? String else {
-                    return
-            }
+                let bitmoji = me["bitmoji"] as? [String: Any] else { return }
             
             // Needs to be on the main thread to control the UI.
             DispatchQueue.main.async {
-                self.loadAndDisplayAvatar(url: URL(string: avatar))
+                if let avatar = bitmoji["avatar"] as? String {
+                    self.loadAndDisplayAvatar(url: URL(string: avatar))
+                }
                 self.nameLabel?.text = displayName
             }
         }
@@ -119,9 +118,7 @@ extension LoginViewController {
     }
     
     @IBAction func logoutButtonDidTap(_ sender: UIBarButtonItem) {
-        SCSDKLoginClient.unlinkAllSessions { (success: Bool) in
-            self.displayForLogoutState()
-        }
+        SCSDKLoginClient.clearToken()
     }
 }
 
@@ -130,12 +127,19 @@ extension LoginViewController {
 extension LoginViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        SCSDKLoginClient.addLoginStatusObserver(self)
         
         if SCSDKLoginClient.isUserLoggedIn {
             displayForLoginState()
         } else {
             displayForLogoutState()
         }
+    }
+}
+
+extension LoginViewController: SCSDKLoginStatusObserver {
+    func scsdkLoginDidUnlink() {
+        self.displayForLogoutState()
     }
 }
 
