@@ -1,4 +1,4 @@
-package com.snap.androidloginkitdemo;
+package com.thomasphillips3.goldenfold;
 
 import org.junit.Test;
 

@@ -5,7 +5,7 @@
     android:id="@+id/contentView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.thomasphillips3.goldenfold.MainActivity">
 
     <TextView
         android:id="@+id/labelMyProfile"

@@ -1,4 +1,4 @@
-package com.snap.androidloginkitdemo;
+package com.thomasphillips3.goldenfold;
 
 import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;

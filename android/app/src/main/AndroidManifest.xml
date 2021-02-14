@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.snap.androidloginkitdemo">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.thomasphillips3.goldenfold">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
@@ -8,10 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <meta-data android:name="com.snapchat.kit.sdk.clientId" android:value="INSERT_YOUR_OAUTH_CLIENT_ID" />
-        <meta-data android:name="com.snapchat.kit.sdk.redirectUrl" android:value="INSERT_YOUR_OAUTH_REDIRECT_URL" />
+        <meta-data android:name="com.snapchat.kit.sdk.clientId" android:value="cc002a0e-6e09-455e-b4b1-7ca4c0938190" />
+        <meta-data android:name="com.snapchat.kit.sdk.redirectUrl" android:value="dreamr://login/oauth2" />
         <meta-data android:name="com.snapchat.kit.sdk.scopes" android:resource="@array/snap_connect_scopes" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.thomasphillips3.goldenfold.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -19,17 +21,17 @@
         </activity>
         <activity
             android:name="com.snapchat.kit.sdk.SnapKitActivity"
-            android:launchMode="singleTask"
-            >
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
-                    android:scheme="the scheme of your redirect url"
-                    android:host="the host of your redirect url"
-                    android:path="the path of your redirect url"
-                    />
+                    android:scheme="dreamr"
+                    android:host="login"
+                    android:path="/oauth2" />
             </intent-filter>
         </activity>
     </application>
