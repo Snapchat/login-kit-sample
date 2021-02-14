@@ -19,7 +19,7 @@ android {
 }
 
 ext {
-    snapKitSdkVersion = '1.4.0'
+    snapKitSdkVersion = '1.8.0'
 }
 
 dependencies {
