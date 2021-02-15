@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <meta-data android:name="com.snapchat.kit.sdk.clientId" android:value="cc002a0e-6e09-455e-b4b1-7ca4c0938190" />
+        <meta-data android:name="com.snapchat.kit.sdk.clientId" android:value="3a4a9eaf-c51b-4a4b-b5f6-84dff6012c15" />
         <meta-data android:name="com.snapchat.kit.sdk.redirectUrl" android:value="dreamr://login/oauth2" />
         <meta-data android:name="com.snapchat.kit.sdk.scopes" android:resource="@array/snap_connect_scopes" />
         <activity android:name="com.thomasphillips3.goldenfold.MainActivity">
