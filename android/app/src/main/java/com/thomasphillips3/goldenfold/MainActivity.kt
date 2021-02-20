@@ -45,20 +45,20 @@ class MainActivity : AppCompatActivity() {
         mLabelExternalId = findViewById(R.id.labelExternalIdView)
 
         // the sign out button will allow the user to unlink their profile from the app
-        mSignOutButton.setOnClickListener(View.OnClickListener { signOutUser() })
+        mSignOutButton.setOnClickListener { signOutUser() }
 
         // the LoginStateListener tells us when a user has signed in/out
         mLoginStateChangedListener = object : OnLoginStateChangedListener {
             override fun onLoginSucceeded() {
                 Log.d("SnapkitLogin", "Login was successful")
-                mSignOutButton.setVisibility(View.VISIBLE)
-                mDisplayName.setVisibility(View.VISIBLE)
-                mExternalIdView.setVisibility(View.VISIBLE)
-                mAvatarImageView.setVisibility(View.VISIBLE)
-                mLabelMyProfile.setVisibility(View.INVISIBLE)
-                mLoginButton.setVisibility(View.INVISIBLE)
-                mLabelDisplayName.setVisibility(View.VISIBLE)
-                mLabelExternalId.setVisibility(View.VISIBLE)
+                mSignOutButton.visibility = View.VISIBLE
+                mDisplayName.visibility = View.VISIBLE
+                mExternalIdView.visibility = View.VISIBLE
+                mAvatarImageView.visibility = View.VISIBLE
+                mLabelMyProfile.visibility = View.INVISIBLE
+                mLoginButton.visibility = View.INVISIBLE
+                mLabelDisplayName.visibility = View.VISIBLE
+                mLabelExternalId.visibility = View.VISIBLE
                 userDetails
             }
 
@@ -73,20 +73,16 @@ class MainActivity : AppCompatActivity() {
                 resetUserInfo()
             }
         }
-        SnapLogin.getLoginStateController(this).addOnLoginStateChangedListener(mLoginStateChangedListener)
-    }// set the value of the display name
+        SnapLogin.getLoginStateController(this)
+            .addOnLoginStateChangedListener(mLoginStateChangedListener)
+    }
 
-    // set the value of the external id
-
-    // not all users have a bitmoji connected, if the account has bitmoji connected we load the bitmoji avatar
-    // set a list of the data the app wants to use - these need to mirror the snap_connect_scopes set in arrays.xml
     private val userDetails: Unit
-        private get() {
+        get() {
             val isUserLoggedIn = SnapLogin.isUserLoggedIn(this)
             if (isUserLoggedIn) {
                 Log.d("SnapkitLogin", "The user is logged in")
 
-                // set a list of the data the app wants to use - these need to mirror the snap_connect_scopes set in arrays.xml
                 val query = "{me{bitmoji{avatar},displayName,externalId}}"
                 SnapLogin.fetchUserData(this, query, null, object : FetchUserDataCallback {
                     override fun onSuccess(userDataResponse: UserDataResponse?) {
@@ -94,19 +90,18 @@ class MainActivity : AppCompatActivity() {
                             return
                         }
                         meData = userDataResponse.data.me
-                        if (meData == null) {
-                            return
-                        }
 
                         // set the value of the display name
-                        mDisplayName!!.text = userDataResponse.data.me.displayName
+                        mDisplayName.text = userDataResponse.data.me.displayName
 
                         // set the value of the external id
-                        mExternalIdView!!.text = userDataResponse.data.me.externalId
+                        mExternalIdView.text = userDataResponse.data.me.externalId
 
                         // not all users have a bitmoji connected, if the account has bitmoji connected we load the bitmoji avatar
-                        if (meData!!.bitmojiData != null) {
-                            Glide.with(baseContext).load(meData!!.bitmojiData.avatar).into(mAvatarImageView!!)
+                        if (meData.bitmojiData != null) {
+                            Glide.with(baseContext).load(meData.bitmojiData.avatar).into(
+                                mAvatarImageView
+                            )
                         }
                     }
 
@@ -119,17 +114,17 @@ class MainActivity : AppCompatActivity() {
 
     private fun resetUserInfo() {
         // emptying text fields, image and hiding/showing buttons
-        mDisplayName!!.text = ""
-        mExternalIdView!!.text = ""
-        mAvatarImageView!!.setImageResource(R.drawable.bitmoji450x450)
-        mDisplayName!!.visibility = View.INVISIBLE
-        mExternalIdView!!.visibility = View.INVISIBLE
-        mAvatarImageView!!.visibility = View.INVISIBLE
-        mLabelMyProfile!!.visibility = View.VISIBLE
-        mSignOutButton!!.visibility = View.INVISIBLE
-        mLoginButton!!.visibility = View.VISIBLE
-        mLabelDisplayName!!.visibility = View.INVISIBLE
-        mLabelExternalId!!.visibility = View.INVISIBLE
+        mDisplayName.text = ""
+        mExternalIdView.text = ""
+        mAvatarImageView.setImageResource(R.drawable.bitmoji450x450)
+        mDisplayName.visibility = View.INVISIBLE
+        mExternalIdView.visibility = View.INVISIBLE
+        mAvatarImageView.visibility = View.INVISIBLE
+        mLabelMyProfile.visibility = View.VISIBLE
+        mSignOutButton.visibility = View.INVISIBLE
+        mLoginButton.visibility = View.VISIBLE
+        mLabelDisplayName.visibility = View.INVISIBLE
+        mLabelExternalId.visibility = View.INVISIBLE
     }
 
     private fun signOutUser() {
