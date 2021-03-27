@@ -6,4 +6,5 @@
     <string name="logout_button">Unlink account</string>
     <string name="not_logged_in">User is not logged in</string>
     <string name="user_profile_title">My Profile</string>
+    <string name="log_in">Log in</string>
 </resources>
