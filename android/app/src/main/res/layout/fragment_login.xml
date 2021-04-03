@@ -31,5 +31,15 @@
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="@+id/imageView"
             tools:layout_editor_absoluteX="0dp" />
+
+        <Button
+            android:id="@+id/logout_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/log_out"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/login_button"
+            tools:layout_editor_absoluteX="0dp"
+            android:visibility="gone"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

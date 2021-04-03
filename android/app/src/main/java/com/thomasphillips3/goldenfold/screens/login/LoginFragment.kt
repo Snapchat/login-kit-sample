@@ -1,5 +1,6 @@
 package com.thomasphillips3.goldenfold.screens.login
 
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -35,10 +36,18 @@ class LoginFragment : Fragment() {
                 .addOnLoginStateChangedListener(mLoginStateChangedListener)
         }
 
+        binding.logoutButton.setOnClickListener {
+            if (SnapLogin.getAuthTokenManager(context).isUserLoggedIn) {
+                SnapLogin.getAuthTokenManager(context)
+                    .clearToken()
+                binding.logoutButton.visibility = View.GONE
+            }
+        }
+
         mLoginStateChangedListener = object :
             LoginStateController.OnLoginStateChangedListener {
             override fun onLoginSucceeded() {
-                // Here you could update UI to show login success
+                binding.logoutButton.visibility = View.VISIBLE
             }
 
             override fun onLoginFailed() {

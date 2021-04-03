@@ -7,4 +7,5 @@
     <string name="not_logged_in">User is not logged in</string>
     <string name="user_profile_title">My Profile</string>
     <string name="log_in">Log in</string>
+    <string name="log_out">Log out</string>
 </resources>
