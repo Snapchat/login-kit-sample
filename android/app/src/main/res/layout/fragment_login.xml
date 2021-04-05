@@ -13,7 +13,7 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="bitmoji"
+            android:contentDescription="@string/bitmoji"
             android:src="@drawable/bitmoji450x450"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
