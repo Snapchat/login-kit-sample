@@ -5,12 +5,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.snapchat.kit.sdk.SnapLogin
 import com.snapchat.kit.sdk.core.controller.LoginStateController
 import com.thomasphillips3.goldenfold.R
 import com.thomasphillips3.goldenfold.databinding.FragmentLoginBinding
+import com.thomasphillips3.goldenfold.databinding.FragmentProfileBinding
+import com.thomasphillips3.goldenfold.screens.profile.ProfileFragment
 
 
 class LoginFragment : Fragment() {
@@ -48,14 +52,16 @@ class LoginFragment : Fragment() {
             LoginStateController.OnLoginStateChangedListener {
             override fun onLoginSucceeded() {
                 binding.logoutButton.visibility = View.VISIBLE
+                binding.loginButton.visibility = View.GONE
             }
 
             override fun onLoginFailed() {
-                // Here you could update UI to show login failure
+                Toast.makeText(context, "Login failed", Toast.LENGTH_SHORT).show()
             }
 
             override fun onLogout() {
-                // Here you could update UI to reflect logged out state
+                binding.logoutButton.visibility = View.GONE
+                binding.loginButton.visibility = View.VISIBLE
             }
         }
         return binding.root
