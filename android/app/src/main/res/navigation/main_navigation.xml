@@ -3,12 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/login_destination">
+    app:startDestination="@id/login_fragment">
 
     <fragment
-        android:id="@+id/login_destination"
+        android:id="@+id/login_fragment"
         android:name="com.thomasphillips3.goldenfold.screens.login.LoginFragment"
         android:label="login_fragment"
         tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_profile"
+            app:destination="@id/profile_fragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@layout/fragment_login"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.thomasphillips3.goldenfold.screens.profile.ProfileFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/fragment_profile">
     </fragment>
 </navigation>

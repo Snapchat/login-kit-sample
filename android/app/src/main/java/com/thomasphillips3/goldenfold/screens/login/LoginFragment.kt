@@ -53,6 +53,7 @@ class LoginFragment : Fragment() {
             override fun onLoginSucceeded() {
                 binding.logoutButton.visibility = View.VISIBLE
                 binding.loginButton.visibility = View.GONE
+                findNavController().navigate(LoginFragmentDirections.actionLoginToProfile())
             }
 
             override fun onLoginFailed() {

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">androidloginkitdemo</string>
+    <string name="app_name">dreamr</string>
     <string name="user_display_name">Display name</string>
     <string name="user_external_id">External ID</string>
     <string name="user_avatar_holding_text">Avatar profile image</string>
@@ -8,4 +8,5 @@
     <string name="user_profile_title">My Profile</string>
     <string name="log_in">Log in</string>
     <string name="log_out">Log out</string>
+    <string name="bitmoji">bitmoji</string>
 </resources>
