@@ -64,33 +64,7 @@
 		<string>itms-apps</string>
 	</array>
 
-    <key>CFBundleURLTypes</key>
-	<array>
-       <dict>
-           <key>CFBundleTypeRole</key>
-           <string>Editor</string>
- 
-           <!-- TODO(2): iOS Platform Identifier that you need to update on the Snap Kit Developer Portal -->
-           <key>CFBundleURLName</key>
-           <string>com.reactnativeloginkitdemo</string>
- 
-           <!-- TODO(3)
-               Enter your redirect scheme below.
-               e.g. if your redirect url is "myapp://snap-kit/oauth2"
- 
-               <key>CFBundleURLSchemes</key>
-               <array>
-                   <string>myapp</string>
-               </array>
-           -->
-           <key>CFBundleURLSchemes</key>
-           <array>
-               <string>snapkitexample</string>
-           </array>
-       </dict>
-   </array>
-
-	<!-- TODO(4): Paste the OAuth2 Client ID for your specific app -->
+	<!-- TODO(2): Paste the OAuth2 Client ID for your specific app -->
 	
 	<!--
 		To ensure that this test app works, make sure that in the Snap Kit Developer Portal:
@@ -114,7 +88,7 @@
 	<key>SCSDKClientId</key>
 	<string>OAUTH2_CLIENT_ID_FROM_PORTAL</string>
 	
-	<!-- TODO(5): Declare the redirect url that will handle and complete login requests -->
+	<!-- TODO(3): Declare the redirect url that will handle and complete login requests -->
 	
 	<!--
 		To ensure that this test app works, make sure that in the Snap Kit Developer Portal:
@@ -131,8 +105,30 @@
 	-->
 	<key>SCSDKRedirectUrl</key>
 	<string>snapkitexample://main/auth</string>
-	
-	<!-- TODO(6): Declare the resources that you want to request -->
+
+    <key>CFBundleURLTypes</key>
+	<array>
+       <dict>
+           <key>CFBundleTypeRole</key>
+           <string>Editor</string>
+		   
+			<!-- TODO(4)
+               Enter your redirect scheme below.
+               e.g. if your redirect url is "myapp://snap-kit/oauth2"
+ 
+               <key>CFBundleURLSchemes</key>
+               <array>
+                   <string>myapp</string>
+               </array>
+           -->
+           <key>CFBundleURLSchemes</key>
+           <array>
+               <string>snapkitexample</string>
+           </array>
+       </dict>
+   </array>
+
+	<!-- TODO(5): Declare the resources that you want to request -->
 	<key>SCSDKScopes</key>
 	<array>
 		<string>https://auth.snapchat.com/oauth2/api/user.bitmoji.avatar</string>

@@ -45,10 +45,10 @@ To test your Snap Kit integration on Staging we need to update the Demo Users se
 
 To allow your Android and iOS apps access Snap Kit APIs we need to update the Platform Identifiers section with:
 
-| Stage   | Platform | Bundle or App ID            |
-| ------- | -------- | --------------------------- |
-| Staging | Android  | com.reactnativeloginkitdemo |
-| Staging | iOS      | com.reactnativeloginkitdemo |
+| Stage   | Platform | Bundle or App ID                                   |
+| ------- | -------- | -------------------------------------------------- |
+| Staging | Android  | com.reactnativeloginkitdemo                        |
+| Staging | iOS      | org.reactjs.native.example.ReactNativeLoginKitDemo |
 
 <details>
   <summary markdown="span">
@@ -58,7 +58,7 @@ To allow your Android and iOS apps access Snap Kit APIs we need to update the Pl
 | Platform | Location                                                                                                             |
 | -------- | -------------------------------------------------------------------------------------------------------------------- |
 | Android  | Specified as the `applicationId` under the `defaultConfig` tag in the [build.gradle](android/app/build.gradle) file. |
-| iOS      | Specified under the `CFBundleURLName` key defined in the [Info.plist](ios/ReactNativeLoginKitDemo/Info.plist) file.  |
+| iOS      | Refer the Bundle Identifier for your app in the [Info.plist](ios/ReactNativeLoginKitDemo/Info.plist) file.           |
 
 </details>
 
@@ -205,13 +205,33 @@ Always refer [public docs](https://kit.snapchat.com/docs/login-kit-ios) for most
 
 | Key                         | Value                                                                                                                                                                                                                                                                                                              |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| LSApplicationQueriesSchemes | This should contain `snapchat`, `bitmoji-sdk`, and `tms-apps`.                                                                                                                                                                                                                                                     |
+| SCSDKClientId               | The OAuth Client ID you received from registering your app on the developer portal.                                                                                                                                                                                                                                |
+| SCSDKRedirectUrl            | The URL that Snapchat will use to redirect users back to your app after a successful authorization.                                                                                                                                                                                                                |
+| SCSDKScopes                 | OAuth2 scopes. Set it one or all of the following scopes for the resources you wish to retrieve from the user profile:<br><br> - https://auth.snapchat.com/oauth2/api/user.display_name<br> - https://auth.snapchat.com/oauth2/api/user.bitmoji.avatar<br> - https://auth.snapchat.com/oauth2/api/user.external_id |
 | URL Types / Document Role   | Set it to `Editor`.                                                                                                                                                                                                                                                                                                |
 | URL Types / URL identifier  | Set it to the app's Bundle ID ie. `$(PRODUCT_BUNDLE_IDENTIFIER)`.                                                                                                                                                                                                                                                  |
 | URL Types / URL Schemes     | Set it to a unique string (without space) to allow Snapchat to redirect back to your app after a successful authorization.<br><br>For example, If your app's redirectUrl (refer the `SCSDKRedirectUrl` key) is `snapkitexample://main/auth` then your scheme would be `snapkitexample`.                            |
-| SCSDKClientId               | The OAuth Client ID you received from registering your app on the developer portal.                                                                                                                                                                                                                                |
-| SCSDKRedirectUrl            | The URL that Snapchat will use to redirect users back to your app after a successful authorization.                                                                                                                                                                                                                |
-| LSApplicationQueriesSchemes | This should contain `snapchat`, `bitmoji-sdk`, and `tms-apps`.                                                                                                                                                                                                                                                     |
-| SCSDKScopes                 | OAuth2 scopes. Set it one or all of the following scopes for the resources you wish to retrieve from the user profile:<br><br> - https://auth.snapchat.com/oauth2/api/user.display_name<br> - https://auth.snapchat.com/oauth2/api/user.bitmoji.avatar<br> - https://auth.snapchat.com/oauth2/api/user.external_id |
+
+##### 2. Finishing Login with Snapchat
+
+Once your user successfully authorizes your app to log in with Snapchat, you need to handle the deeplink that comes from Snapchat to get the access token.
+
+In `AppDelegate.m`, use the `SCSDKLoginClient` interface to receive the deeplink:
+
+```objective-c
+#import <SCSDKLoginKit/SCSDKLoginKit.h>
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
+. . .
+              if ([SCSDKLoginClient application:application openUrl:url options:options]) {
+                return YES;
+              }
+. . .
+}
+```
 
 ## React Native Environment Setup
 
