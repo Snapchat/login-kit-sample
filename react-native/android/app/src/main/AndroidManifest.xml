@@ -35,7 +35,7 @@
 
         <!--
           With the Production Client ID, your app can post the content from any Snapchat account
-          however, your app must be approved for the Production Client ID to work.OAUTH2_CLIENT_ID_FROM_PORTAL
+          however, your app must be approved for the Production Client ID to work.
         -->
         <meta-data
             android:name="com.snapchat.kit.sdk.clientId"
