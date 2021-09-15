@@ -1,0 +1,112 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.reactnativeloginkitdemo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- TODO(3): Declare the Snapchat package query (required only if your app targets Android 11 or higher) -->
+    <queries>
+        <package android:name="com.snapchat.android" />
+    </queries>
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/AppTheme">
+
+        <!-- TODO(4): Paste the OAuth2 Client ID for your specific app -->
+
+        <!--
+          To ensure that this test app works, make sure that in the Snap Kit Developer Portal:
+
+          1. You set your app's Android App ID under "Platform Identifiers" section
+          2. Your Snapchat username is in the list of "Demo Users" (only required if testing on the Staging)
+
+          Then you should paste your Staging/Production OAuth2 Client ID here.
+        -->
+
+        <!--
+          You can use the Staging Client ID anytime even before an app is reviewed and approved
+          however, only accounts listed under the "Demo Users" on the Snap Kit developer portal
+          will be able to use your application.
+        -->
+
+        <!--
+          With the Production Client ID, your app can post the content from any Snapchat account
+          however, your app must be approved for the Production Client ID to work.
+        -->
+        <meta-data
+            android:name="com.snapchat.kit.sdk.clientId"
+            android:value="OAUTH2_CLIENT_ID_FROM_PORTAL" />
+
+        <!-- TODO(5): Declare the redirect url that will handle and complete login requests -->
+
+        <!--
+          To ensure that this test app works, make sure that in the Snap Kit Developer Portal:
+            1.   You add this url in the "Redirect URIs for OAuth" section
+        -->
+
+        <!--
+          The redirect URL itself doesn't need to have any meaning associated with it and in
+          general, the only real criteria would be to pick a URL with a scheme that is unlikely
+          to collide with a scheme of another app.
+
+          The URL should however follow the syntax "foo://bar".
+          If you need ideas, you could try "myapp://snap-kit/oauth2".
+        -->
+        <meta-data
+            android:name="com.snapchat.kit.sdk.redirectUrl"
+            android:value="snapkitexample://main/auth" />
+
+        <!-- TODO(6): Declare the resources that you want to request -->
+        <!-- You'll have to define snap_connect_scopes as an Android resource array in values/arrays.xml -->
+        <meta-data
+            android:name="com.snapchat.kit.sdk.scopes"
+            android:resource="@array/snap_connect_scopes" />
+
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+
+        <!-- TODO(7): Add the SnapKitActivity -->
+        <activity
+            android:name="com.snapchat.kit.sdk.SnapKitActivity"
+            android:launchMode="singleTask">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!--
+                  Enter the parts of your redirect url below
+                  e.g. if your redirect url is "myapp://snap-kit/oauth2"
+
+                  android:scheme="myapp"
+                  android:host="snap-kit"
+                  android:path="/oauth2"
+                -->
+                <data
+                    android:scheme="snapkitexample"
+                    android:host="main"
+                    android:path="/auth" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
