@@ -2,7 +2,7 @@ platform :ios, '12.0'
 use_frameworks!
 
 target 'LoginKitSample' do
-  pod 'SnapSDK', '1.4.0', :subspecs => ['SCSDKLoginKit']
+  pod 'SnapSDK', '2.4.0', :subspecs => ['SCSDKLoginKit']
 end
 
 target 'LoginKitSampleTests' do
