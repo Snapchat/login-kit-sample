@@ -1,12 +1,11 @@
-#  Snap Kit
+# Snap Kit
 
 Snap Kit lets developers like you integrate some of Snapchat’s best features across your platform — and lets your community share their favorite moments from your app with their friends, and Snapchatters across the world.
 
 You can apply Snapchat's camera and creative tools, implement login with Snapchat, or bring Bitmojis and Stories into your app. [Learn more](https://kit.snapchat.com/) about how Snap Kit can enhance your app, or hop to a specific SDK:
+
 - [Creative Kit](https://kit.snapchat.com/#creative-kit)
 - [Login Kit](https://kit.snapchat.com/#login-kit)
-- [Bitmoji Kit](https://kit.snapchat.com/#bitmoji-kit)
-- [Story Kit](https://kit.snapchat.com/#story-kit)
 
 ### Documentation
 
