@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Snap Login Kit</string>
+    <string name="slogan">It\'s easier to login now!</string>
+    <string name="login_description">This is a sample project to show you how to use snapchat login kit in Android with Jetpack Compose.</string>
+    <string name="home_description">Using snapchat login kit SDK, you can get the username and avatar of the snap user.</string>
+    <string name="logout">Logout</string>
 </resources>
