@@ -26,7 +26,8 @@ class MainActivity : ComponentActivity() {
                 MainScreenContent(
                     state = viewModel.uiState.value,
                     onLogout = { viewModel.onLogout() },
-                    onLogin = { viewModel.onLogin() }
+                    onLogin = { viewModel.onLogin() },
+                    onLoadUserInfo = { viewModel.getUserInfo() }
                 )
             }
         }
@@ -37,10 +38,14 @@ class MainActivity : ComponentActivity() {
 private fun MainScreenContent(
     state: MainUiState,
     onLogin: () -> Unit,
-    onLogout: () -> Unit
+    onLogout: () -> Unit,
+    onLoadUserInfo: () -> Unit,
 ) {
     when (state.authState) {
         AuthState.LOGGED_IN -> {
+            if (state.snapUser == null) {
+                onLoadUserInfo()
+            }
             HomeScreen(
                 onLogout = onLogout,
                 snapUser = state.snapUser
@@ -62,7 +67,8 @@ private fun MainScreenPreview(
         MainScreenContent(
             state = state,
             onLogin = { },
-            onLogout = {}
+            onLogout = {},
+            onLoadUserInfo = {}
         )
     }
 }
