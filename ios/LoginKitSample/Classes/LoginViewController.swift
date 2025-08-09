@@ -53,34 +53,24 @@ extension LoginViewController {
     }
     
     fileprivate func displayProfile() {
-        let successBlock = { (response: [AnyHashable: Any]?) in
-            guard let response = response as? [String: Any],
-                let data = response["data"] as? [String: Any],
-                let me = data["me"] as? [String: Any],
-                let displayName = me["displayName"] as? String,
-                let bitmoji = me["bitmoji"] as? [String: Any],
-                let avatar = bitmoji["avatar"] as? String else {
-                    return
-            }
-            
-            // Needs to be on the main thread to control the UI.
-            DispatchQueue.main.async {
-                self.loadAndDisplayAvatar(url: URL(string: avatar))
-                self.nameLabel?.text = displayName
-            }
-        }
-        
-        let failureBlock = { (error: Error?, success: Bool) in
-            if let error = error {
-                print(String.init(format: "Failed to fetch user data. Details: %@", error.localizedDescription))
-            }
-        }
-        
-        let queryString = "{me{externalId, displayName, bitmoji{avatar}}}"
-        SCSDKLoginClient.fetchUserData(withQuery: queryString,
-                                       variables: nil,
-                                       success: successBlock,
-                                       failure: failureBlock)
+        let builder = SCSDKUserDataQueryBuilder().withDisplayName().withBitmojiTwoDAvatarUrl()
+        SCSDKLoginClient.fetchUserData(
+                with: builder.build(),
+                                       success:  { (userData, errors) in
+                                           let displayName = userData?.displayName ?? ""
+                                           let avatar = userData?.bitmojiTwoDAvatarUrl ?? ""
+
+                                           // Needs to be on the main thread to control the UI.
+                                           DispatchQueue.main.async {
+                                               self.loadAndDisplayAvatar(url: URL(string: avatar))
+                                               self.nameLabel?.text = displayName
+                                           }
+                                       },
+                                       failure: { (error: Error?, isUserLoggedOut: Bool) in
+                                           if let error = error {
+                                               print(String.init(format: "Failed to fetch user data. Details: %@", error.localizedDescription))
+                                           }
+                                       })
     }
     
     fileprivate func loadAndDisplayAvatar(url: URL?) {
@@ -119,9 +109,8 @@ extension LoginViewController {
     }
     
     @IBAction func logoutButtonDidTap(_ sender: UIBarButtonItem) {
-        SCSDKLoginClient.unlinkAllSessions { (success: Bool) in
-            self.displayForLogoutState()
-        }
+        SCSDKLoginClient.clearToken()
+        self.displayForLogoutState()
     }
 }
 

@@ -36,9 +36,9 @@ With the *Production* `clientID`, your app can post the content from any Snapcha
 
 1. Open Info.plist and modify the following attributes:
 
-   * `CFBundleURLTypes`/`CFBundleTypeRole` - Set it to `Editor`
-   * `CFBundleURLTypes`/`CFBundleURLName` - Set it to the app's `bundleID` ie. `$(PRODUCT_BUNDLE_IDENTIFIER)`
-   * `CFBundleURLTypes`/`CFBundleURLSchemes` - Set it to a unique string (without space) allow Snapchat to redirect to your app after
+   * `URL Types`/`Document Role` - Set it to `Editor`
+   * `URL Types`/`URL identifier` - Set it to the app's `bundleID` ie. `$(PRODUCT_BUNDLE_IDENTIFIER)`
+   * `URL Types`/`URL Schemes` - Set it to a unique string (without space) allow Snapchat to redirect to your app after
    * `SCSDKClientId` - OAuth2 client ID you receive from registering your app
    * `SCSDKRedirectUrl` - the URL that Snapchat will use to redirect users back to your after a successful authorization
    * `LSApplicationQueriesSchemes` - Always set the value to `snapchat`

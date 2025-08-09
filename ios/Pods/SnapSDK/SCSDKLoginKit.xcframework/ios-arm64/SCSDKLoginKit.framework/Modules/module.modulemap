@@ -1,0 +1,8 @@
+
+framework module SCSDKLoginKit {
+  umbrella header "SCSDKLoginKit.h"
+
+  export *
+  module * { export * }
+}
+

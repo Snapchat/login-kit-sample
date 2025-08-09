@@ -1,16 +1,18 @@
 PODS:
-  - SnapSDK/SCSDKLoginKit (1.3.1)
+  - SnapSDK/SCSDKCoreKit (2.4.0)
+  - SnapSDK/SCSDKLoginKit (2.4.0):
+    - SnapSDK/SCSDKCoreKit
 
 DEPENDENCIES:
-  - SnapSDK/SCSDKLoginKit (> 1.3)
+  - SnapSDK/SCSDKLoginKit (= 2.4.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - SnapSDK
 
 SPEC CHECKSUMS:
-  SnapSDK: be510aaabbfa7ab0142b53770f2e79c6c6b363e6
+  SnapSDK: e832716ff024b17b448f9bca5feeac5a3daed3ff
 
-PODFILE CHECKSUM: b1abc23cbe49d9db7d93e95081b99dbe323bd506
+PODFILE CHECKSUM: 954250a1065127ba5e258c68f9ce651a3173eedd
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.11.3
