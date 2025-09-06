@@ -29,7 +29,7 @@
         android:fontFamily="@font/avenirnextgeo_regular"
         android:text="@string/user_display_name"
         android:textColor="@color/colorPrimaryDark"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,7 +43,7 @@
         android:contentDescription="@string/logout_button"
         android:fontFamily="@font/avenirnextgeo_regular"
         android:text="@string/logout_button"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -60,7 +60,7 @@
         android:fontFamily="@font/avenirnextgeo_regular"
         android:text="@string/user_external_id"
         android:textColor="@color/colorPrimaryDark"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelDisplayNameView" />
 
@@ -70,6 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="116dp"
+        android:text="@string/user_display_name"
         android:fontFamily="@font/avenirnextgeo_regular"
         app:layout_constraintStart_toEndOf="@+id/labelDisplayNameView"
         app:layout_constraintTop_toTopOf="parent" />
@@ -81,6 +82,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/avenirnextgeo_regular"
+        android:text="@string/user_external_id"
         app:layout_constraintStart_toEndOf="@+id/labelExternalIdView"
         app:layout_constraintTop_toBottomOf="@+id/displayNameView" />
 
@@ -91,7 +93,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
         android:contentDescription="@string/user_avatar_holding_text"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelExternalIdView"
         app:srcCompat="@drawable/bitmoji450x450" />

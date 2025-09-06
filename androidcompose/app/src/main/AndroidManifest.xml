@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SnapLoginKit"
+        tools:targetApi="31"
+        android:name=".SnapKitAp">
+
+        <meta-data
+            android:name="com.snap.kit.clientId"
+            android:value="${SNAP_CLIENT_ID}" />
+        <meta-data
+            android:name="com.snap.kit.redirectUrl"
+            android:value="${SNAP_REDIRECT_URL}" />
+        <meta-data
+            android:name="com.snap.kit.scopes"
+            android:resource="@array/snap_connect_scopes" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.SnapLoginKit">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.snap.corekit.SnapKitActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="${REDIRECT_URL_HOST}"
+                    android:path="${REDIRECT_URL_PATH}"
+                    android:scheme="${REDIRECT_URL_SCHEME}" />
+            </intent-filter>
+
+        </activity>
+
+    </application>
+
+    <queries>
+        <package android:name="com.snapchat.android" />
+    </queries>
+
+</manifest>
